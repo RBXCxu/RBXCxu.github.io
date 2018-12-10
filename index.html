@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PGP Public Key</title>
+    <style>
+    #copyButton {
+        font-size: 2em;
+    }
+    #gpgKey {
+        width: 600px;
+        height: 800px;
+    }
+    </style>
+  </head>
+  <body>
+      <button id="copyButton">Copy to clipboard</button><br><br>
+      <textarea id="gpgKey" readonly>foobar</textarea>
+    <script>
+        function copy() {
+          let copyText = document.getElementById('gpgKey');
+          copyText.select();
+          document.execCommand("copy");
+        }
+
+        document.getElementById('copyButton').addEventListener('click', copy);
+    </script>
+  </body>
+</html>
